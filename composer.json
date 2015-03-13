@@ -1,0 +1,20 @@
+{
+    "name": "def/session",
+    "keywords": ["php-session"],
+    "description": "simple php session wrapper",
+    "type": "library",
+    "homepage": "https://github.com/andrew-kamenchuk/def-session",
+    "require": {
+        "php": ">=5.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "andrew-kamenchuk",
+            "email": "andrew.kamenchuk@gmail.com"
+        }
+    ],
+    "autoload": {
+      "psr-4": {"def\\Session\\":""}
+    }
+}
