@@ -15,6 +15,8 @@ class Session
 		'upload_progress.min-freq' => true, 'url_rewriter.tags'       => true,
 	];
 
+	protected static $flashPrefix = '__flash_';
+
 	public static function enabled()
 	{
 		return \PHP_SESSION_DISABLED != \session_status();
@@ -96,6 +98,22 @@ class Session
 	public function has($key)
 	{
 		return $this->open() && array_key_exists($key, $_SESSION);
+	}
+
+	public function flash($key, $value = null)
+	{	
+		$key = static::$flashPrefix . $key;
+
+		$this->open();
+
+		$flash  = (isset($_SESSION[$key]) && \is_array($_SESSION[$key])) ? $_SESSION[$key] : [];
+
+		if(\func_num_args() > 1)
+			return $_SESSION[$key] = \array_merge($flash, \array_slice(\func_get_args(), 1));
+
+		unset($_SESSION[$key]);
+
+		return $flash;
 	}
 
 	public function option($key, $value = null)
