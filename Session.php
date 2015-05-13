@@ -60,7 +60,7 @@ class Session
 
 	public function id($id = null)
 	{
-		return isset($id) ? \session_id($id) : \session_id();
+		return \func_num_args() ? \session_id($id) : \session_id();
 	}
 
 	public function regenerateId($delete_old = false)
@@ -70,12 +70,12 @@ class Session
 
 	public function name($name = null)
 	{
-		return isset($name) ? \session_name($name) : \session_name(); 
+		return \func_num_args() ? \session_name($name) : \session_name(); 
 	}
 
 	public function path($path = null)
 	{
-		return isset($path) ? \session_save_path($path) : \session_save_path();
+		return \func_num_args() ? \session_save_path($path) : \session_save_path();
 	}
 
 	public function get($key, $default = null)
