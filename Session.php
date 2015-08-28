@@ -132,7 +132,6 @@ class Session
 	public function restoreOptions()
 	{
 		if(\get_cfg_var('cfg_file_path'))
-			foreach(\array_keys(static::$validOptions) as $key)
-				\ini_set("session.{$key}", \get_cfg_var("session.{$key}"));
+			foreach(\array_keys(static::$validOptions) as $key) \ini_restore("session.{$key}");
 	}
 }
