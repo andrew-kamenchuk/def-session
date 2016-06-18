@@ -1,11 +1,11 @@
 {
     "name": "def/session",
     "keywords": ["php-session"],
-    "description": "simple php session wrapper",
+    "description": "php session functions wrapper",
     "type": "library",
     "homepage": "https://github.com/andrew-kamenchuk/def-session",
     "require": {
-        "php": ">=5.4"
+        "php": ">=5.6"
     },
     "license": "MIT",
     "authors": [
