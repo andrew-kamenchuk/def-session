@@ -1,7 +1,7 @@
 {
     "name": "def/session",
     "keywords": ["php-session"],
-    "description": "php session functions wrapper",
+    "description": "php class session functions wrapper",
     "type": "library",
     "homepage": "https://github.com/andrew-kamenchuk/def-session",
     "require": {
